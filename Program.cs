@@ -2,9 +2,27 @@
 using System.Globalization;
 
 DateTime data = DateTime.Now;
+
 Console.WriteLine(data.ToString("dd/MM/yyyy HH:mm"));
 
+Console.WriteLine(data.ToShortDateString());
+Console.WriteLine(data.ToShortTimeString());
 
+DateTime data2 = DateTime.Parse("17/04/2022 18:00");
+Console.WriteLine(data2);
+
+string dataString = "2022-14-17 18:00";
+
+bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataConvertida);
+
+if (sucesso)
+{
+  Console.WriteLine($"Conversão com sucesso: {dataConvertida}");
+}
+else
+{
+  Console.WriteLine($"{dataString} não é uma data válida");
+}
 
 
 
