@@ -1,28 +1,322 @@
 ﻿using ExemploExplorando.Models;
 using System.Globalization;
 
-DateTime data = DateTime.Now;
+Dictionary<string, string> estados = new Dictionary<string, string>();
 
-Console.WriteLine(data.ToString("dd/MM/yyyy HH:mm"));
+estados.Add("SP", "São Paulo");
+estados.Add("MG", "Minas Gerais");
+estados.Add("RJ", "Rio de Janeiro");
+estados.Add("ES", "Espírito Santo");
 
-Console.WriteLine(data.ToShortDateString());
-Console.WriteLine(data.ToShortTimeString());
-
-DateTime data2 = DateTime.Parse("17/04/2022 18:00");
-Console.WriteLine(data2);
-
-string dataString = "2022-14-17 18:00";
-
-bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataConvertida);
-
-if (sucesso)
+foreach (KeyValuePair<string, string> item in estados)
 {
-  Console.WriteLine($"Conversão com sucesso: {dataConvertida}");
+    Console.WriteLine($"Sigla: {item.Key} - Estado: {item.Value}");
+}
+
+estados.Remove("ES");
+
+estados["SP"] = "São Paulo - SP";
+
+foreach (KeyValuePair<string, string> item in estados)
+{
+    Console.WriteLine($"Sigla: {item.Key} - Estado: {item.Value}");
+}
+
+string chave = "BA";
+
+Console.WriteLine($"Verificando o elemento: {chave}");
+
+if (estados.ContainsKey(chave))
+{
+    Console.WriteLine($"Valor existente: {chave}");
 }
 else
 {
-  Console.WriteLine($"{dataString} não é uma data válida");
+    Console.WriteLine($"Valor não existente: {chave}");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Stack<int> pilha = new Stack<int>();
+
+// pilha.Push(2);
+// pilha.Push(4);
+// pilha.Push(6);
+// pilha.Push(8);
+
+// foreach (int item in pilha)
+// {
+//     Console.WriteLine(item);
+// }
+
+// Console.WriteLine($"Removendo o elemento do topo: {pilha.Pop()}");
+// pilha.Push(10);
+
+// foreach (int item in pilha)
+// {
+//     Console.WriteLine(item);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Queue<int> fila = new Queue<int>();
+
+// fila.Enqueue(2);
+// fila.Enqueue(4);
+// fila.Enqueue(6);
+// fila.Enqueue(8);
+
+// foreach (int item in fila)
+// {
+//     Console.WriteLine(item);
+// }
+
+// Console.WriteLine($"Removendo o elemento: {fila.Dequeue()}");
+// fila.Enqueue(10);
+
+// foreach (int item in fila)
+// {
+//     Console.WriteLine(item);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExemploExcecao exemplo = new ExemploExcecao();
+// exemplo.Metodo1();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// try
+// {
+//     string[] linhas = File.ReadAllLines("Arquivos/arquivoLeitura.txt");
+
+//     foreach (string linha in linhas)
+//     {
+//         Console.WriteLine(linha);
+//     }
+
+// }
+// catch (FileNotFoundException ex)
+// {
+//     Console.WriteLine($"Ocorreu um erro na leitura do arquivo. Arquivo não encontrado. {ex.Message}");
+// }
+// catch (DirectoryNotFoundException ex)
+// {
+//     Console.WriteLine($"Ocorreu um erro na leitura do arquivo. Diretório não encontrado. {ex.Message}");
+// }
+// catch (Exception ex)
+// {
+//     Console.WriteLine($"Ocorreu uma exceção genérica. {ex.Message}");
+// }
+// finally // Executado sempre, independente de ter ocorrido uma exceção ou não
+// {
+//     Console.WriteLine("Fim do programa");
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// DateTime data = DateTime.Now;
+
+// Console.WriteLine(data.ToString("dd/MM/yyyy HH:mm"));
+
+// Console.WriteLine(data.ToShortDateString());
+// Console.WriteLine(data.ToShortTimeString());
+
+// DateTime data2 = DateTime.Parse("17/04/2022 18:00");
+// Console.WriteLine(data2);
+
+// string dataString = "2022-14-17 18:00";
+
+// bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataConvertida);
+
+// if (sucesso)
+// {
+//   Console.WriteLine($"Conversão com sucesso: {dataConvertida}");
+// }
+// else
+// {
+//   Console.WriteLine($"{dataString} não é uma data válida");
+// }
 
 
 
